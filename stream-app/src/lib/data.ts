@@ -69,3 +69,7 @@ export function getFirstEpisode(showId: string): Episode | null {
 export function getRelatedShows(excludeShowId: string, limit = 6): Show[] {
   return SHOWS.filter((s) => s.id !== excludeShowId).slice(0, limit);
 }
+
+export function getShowsByVibes(genres: string[]): Show[] {
+  return SHOWS.filter((s) => s.genres.some((g) => genres.includes(g)));
+}
