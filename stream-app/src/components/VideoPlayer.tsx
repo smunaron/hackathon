@@ -4,7 +4,7 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false }) as any;
+const ReactPlayer = dynamic(() => import("react-player").then((mod) => mod.default), { ssr: false }) as any;
 
 interface VideoPlayerProps {
   src: string;
@@ -26,10 +26,11 @@ export default function VideoPlayer({ src }: VideoPlayerProps) {
         </div>
       )}
       <ReactPlayer
-        url={src}
+        src={src}
         width="100%"
         height="100%"
         playing
+        muted
         controls
         onReady={() => setReady(true)}
       />
