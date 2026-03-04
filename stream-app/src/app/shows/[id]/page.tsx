@@ -1,4 +1,10 @@
-import { getShowById, getEpisodesForShow, getFirstEpisode } from "@/lib/data";
+import { getShowById, getEpisodesForShow, getAllShows } from "@/lib/data";
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getAllShows().map((show) => ({ id: show.id }));
+}
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";

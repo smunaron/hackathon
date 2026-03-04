@@ -52,6 +52,10 @@ export function getEpisodesForShow(showId: string): Episode[] {
   );
 }
 
+export function getAllEpisodes(): Episode[] {
+  return EPISODES;
+}
+
 export function getEpisodeById(id: string): Episode | null {
   return EPISODES.find((e) => e.id === id) ?? null;
 }

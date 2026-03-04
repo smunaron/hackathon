@@ -1,4 +1,10 @@
-import { getEpisodeById, getShowById, getEpisodesForShow, getRelatedShows } from "@/lib/data";
+import { getEpisodeById, getShowById, getEpisodesForShow, getRelatedShows, getAllEpisodes } from "@/lib/data";
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return getAllEpisodes().map((ep) => ({ id: ep.id }));
+}
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
