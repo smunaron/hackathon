@@ -1,6 +1,7 @@
 import { getFeaturedShow, getAllShows, getShowsByCategory, getGenreGroups, getFirstEpisode } from "@/lib/data";
 import HeroBanner from "@/components/HeroBanner";
 import ShowCarousel from "@/components/ShowCarousel";
+import VibeSearchSpotlight from "@/components/VibeSearchSpotlight";
 
 export default function HomePage() {
   const featured = getFeaturedShow();
@@ -22,6 +23,7 @@ export default function HomePage() {
       <div className="mt-8 space-y-10 pb-10">
         <ShowCarousel title="Alle titels" shows={allShows} />
         {series.length > 0 && <ShowCarousel title="Series" shows={series} />}
+        <VibeSearchSpotlight />
         {movies.length > 0 && <ShowCarousel title="Films" shows={movies} />}
         {topGenres.map(([genre, shows]) => (
           <ShowCarousel key={genre} title={genre} shows={shows} />
