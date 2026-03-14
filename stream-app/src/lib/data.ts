@@ -6,7 +6,15 @@ import { SHOWS, EPISODES } from "./mock-data";
 import type { Show, Episode } from "./supabase/types";
 
 export function getAllShows(): Show[] {
-  return SHOWS;
+  const series = SHOWS.filter((s) => s.category === "series");
+  const movies = SHOWS.filter((s) => s.category === "movie");
+  const mixed: Show[] = [];
+  const len = Math.max(series.length, movies.length);
+  for (let i = 0; i < len; i++) {
+    if (i < series.length) mixed.push(series[i]);
+    if (i < movies.length) mixed.push(movies[i]);
+  }
+  return mixed;
 }
 
 export function getFeaturedShow(): Show | null {
