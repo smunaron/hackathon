@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Search, BookmarkCheck, Menu, X } from "lucide-react";
+import { Search, BookmarkCheck, Menu, X, Radio } from "lucide-react";
 
 export default function Navbar() {
   const router = useRouter();
@@ -66,6 +66,18 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/live"
+              className={`flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-full transition-colors ${
+                pathname === "/live"
+                  ? "bg-red-600 text-white"
+                  : "text-red-400 hover:text-white hover:bg-red-600/80"
+              }`}
+            >
+              <Radio size={13} />
+              HLN Live
+              <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+            </Link>
           </div>
 
           {/* Search + watchlist */}
@@ -128,6 +140,15 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/live"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 text-sm text-red-400 hover:text-white py-1 font-semibold"
+            >
+              <Radio size={16} />
+              HLN Live
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+            </Link>
             <Link
               href="/watchlist"
               onClick={() => setMobileOpen(false)}
