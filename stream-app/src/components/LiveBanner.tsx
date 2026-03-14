@@ -72,29 +72,9 @@ export default function LiveBanner() {
     <div className="mx-4 sm:mx-6 lg:mx-8">
       <Link href="/live" className="block group">
         <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a0535] via-[#0e0118] to-[#1a0535] border border-[#2d1050] group-hover:border-red-500/40 transition-colors">
-          <div className="flex items-center gap-4 sm:gap-8 px-6 sm:px-8 py-6 sm:py-8">
+          <div className="flex items-center gap-5 sm:gap-7 px-6 sm:px-8 py-6 sm:py-8">
 
-            {/* Left: copy */}
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex items-center gap-1.5 bg-red-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                  LIVE
-                </span>
-              </div>
-              <div className="flex items-center gap-2 mb-1">
-                <Radio size={16} className="text-red-500 shrink-0" />
-                <h3 className="text-white text-lg sm:text-xl font-black">HLN Live</h3>
-              </div>
-              <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-                Volg het laatste nieuws live — rechtstreeks en non-stop.
-              </p>
-              <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-600 group-hover:bg-red-500 text-white text-sm font-bold rounded-full transition-colors shadow-lg shadow-red-900/30">
-                Kijk nu live
-              </div>
-            </div>
-
-            {/* Right: live preview */}
+            {/* Left: live preview */}
             <div className="shrink-0 w-36 sm:w-52 lg:w-64">
               <div className="relative rounded-xl overflow-hidden aspect-video bg-[#0e0118] border border-white/10 shadow-2xl shadow-black/60 group-hover:border-red-500/30 transition-colors">
 
@@ -129,6 +109,26 @@ export default function LiveBanner() {
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                   <span className="text-white text-[10px] font-bold">LIVE</span>
                 </div>
+              </div>
+            </div>
+
+            {/* Right: copy */}
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="flex items-center gap-1.5 bg-red-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  LIVE
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mb-1">
+                <Radio size={16} className="text-red-500 shrink-0" />
+                <h3 className="text-white text-lg sm:text-xl font-black">HLN Live</h3>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+                Volg het laatste nieuws live — rechtstreeks en non-stop.
+              </p>
+              <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-600 group-hover:bg-red-500 text-white text-sm font-bold rounded-full transition-colors shadow-lg shadow-red-900/30">
+                Kijk nu live
               </div>
             </div>
 
