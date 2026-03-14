@@ -10,7 +10,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: stream-app/.next
+    baseDirectory: stream-app/out
     files:
       - '**/*'
   cache:
